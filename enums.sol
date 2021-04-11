@@ -4,7 +4,7 @@ pragma solidity ^0.7.0;
 contract EnumExample {
 
     // make and enum
-    enum ShirtSize {SMALL, MEDIUM, LARGE};
+    enum ShirtSize { SMALL, MEDIUM, LARGE };
     ShirtSize size;
 
     // use the enum
@@ -18,5 +18,7 @@ contract EnumExample {
         return size;
     }
 
-    
+    function setSize(ShirtSize _size) public {
+        size = _size;
+    }
 }
