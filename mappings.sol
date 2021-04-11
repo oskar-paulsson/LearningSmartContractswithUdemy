@@ -14,7 +14,7 @@ contract MappingExample{
     }
 
     // reading data from a mapping
-    function(string memory _player) external view returns(){
+    function(string memory _player) external view returns(uint){
         return players[_player];
     }
 
