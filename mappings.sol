@@ -7,7 +7,7 @@ contract MappingExample{
     mapping(string => uint) public players;
 
     // nested mapping example
-    mapping(string => (mapping(string => uint))) public versions;
+    mapping(string => mapping(string => uint)) public versions;
 
     // fill up the mapping with data
     constructor() {
@@ -34,7 +34,7 @@ contract MappingExample{
 
     // retrieving data from a nested mapping/struct
     function getNestedData(string memory _version, string memory _player) external view returns(uint){
-        return versions[_version][_players];
+        return versions[_version][_player];
     }
 
 }
