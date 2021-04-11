@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0
+
 pragma solidity ^0.7.0;
 
 contract Calculator{
@@ -13,7 +15,7 @@ contract Calculator{
 
   function calculate() public view returns(uint){
 
-    
+
     return result;
   }
 
