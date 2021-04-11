@@ -2,29 +2,51 @@
 
 pragma solidity ^0.7.0;
 
+// A simple calculator, written in solidity
+
 contract Calculator{
 
-  // state variable;
-  uint firstNumber;
-  uint secondNumber;
-  uint result;
+    // state variable;
+    uint firstNumber;
+    uint secondNumber;
+    uint result;
 
-  constructor(){
-    count = 10;
-  }
+    constructor() {
+        firstNumber = 0;
+        secondNumber = 0;
+        result = 0;
+    }
 
-  function calculate() public view returns(uint){
+    function setFirstFactor(uint number) public {
+        firstNumber = number;
+    }
 
+    function setSecondFactor(uint number) public {
+        secondNumber = number;
+    }
 
-    return result;
-  }
+    function multiply() public {
+        result = firstNumber * secondNumber;
+        getCount();
+    }
 
-  //
-  function addNumber(uint number) public {
-    count = count + number;
-  }
+    function divide() public {
+        result = firstNumber / secondNumber;
+        getCount();
+    }
 
-  function subtractNumber(uint number) public {
-    count = count - number;
-  }
+    function subtract() public {
+        result = firstNumber - secondNumber;
+        getCount();
+    }
+
+    function add() public {
+        result = firstNumber + secondNumber;
+        getCount();
+    }
+
+    function getCount() public view returns(uint){
+        return result;
+    }
+
 }
