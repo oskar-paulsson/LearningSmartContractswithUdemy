@@ -23,9 +23,14 @@ contract ArraysExample{
         dynamicArray.push(_updatedValue);
     }
 
-    // delete an elements
-    function deleteArray(uint _index) external {
+    // delete an element
+    function deleteElement(uint _index) external {
         delete dynamicArray[_index];
+    }
+
+    // delete last element
+    function popElement(uint _index) external {
+        dynamicArray.pop();
     }
 
     // add a number to each element in the array
