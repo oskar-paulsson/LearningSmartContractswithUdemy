@@ -32,6 +32,7 @@ contract MappingExample{
         delete players[_player];
     }
 
+    // retrieving data from a nested mapping/struct
     function getNestedData(string memory _version, string memory _player) external view returns(uint){
         return versions[_version][_players];
     }
