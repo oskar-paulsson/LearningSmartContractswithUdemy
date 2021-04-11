@@ -1,5 +1,4 @@
 // SPDX-License-Identifier: GPL-3.0
-
 pragma solidity ^0.7.0;
 
 // A simple calculator, written in solidity
@@ -7,15 +6,9 @@ pragma solidity ^0.7.0;
 contract Calculator{
 
     // state variable;
-    uint firstNumber;
-    uint secondNumber;
-    uint result;
-
-    constructor() {
-        firstNumber = 0;
-        secondNumber = 0;
-        result = 0;
-    }
+    uint public firstNumber;
+    uint public secondNumber;
+    uint public result = 0;
 
     function setFirstFactor(uint number) public {
         firstNumber = number;
@@ -27,26 +20,18 @@ contract Calculator{
 
     function multiply() public {
         result = firstNumber * secondNumber;
-        getCount();
     }
 
     function divide() public {
         result = firstNumber / secondNumber;
-        getCount();
     }
 
     function subtract() public {
         result = firstNumber - secondNumber;
-        getCount();
     }
 
     function add() public {
         result = firstNumber + secondNumber;
-        getCount();
-    }
-
-    function getCount() public view returns(uint){
-        return result;
     }
 
 }
