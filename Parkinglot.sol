@@ -13,7 +13,17 @@ contract ParkingLot {
         currentStatus = LotStatuses.VACANT;
     }
 
-    function park() payable external {
+    modifier checkVacancy {
+        require(currentStatus == LotStatuses.VACANT, "Currently not vacant");
+        _;
+    }
+
+    modifier checkCost(uint _amount) {
+        require(msg.value >= _amount, "Not enough ether provided");
+        _;
+    }
+
+    function park() payable external checkVacancy checkCost(10 ether) {
         currentStatus = LotStatuses.FULL;
         owner.transfer(msg.value);
     }
